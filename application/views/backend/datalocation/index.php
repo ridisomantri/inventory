@@ -32,21 +32,21 @@
         <!-- /.content-header -->
 
         <!-- Main content -->
+
         <div class="col lg 6">
+
             <div class="card-body">
                 <div class="row mb-3">
                     <div class="col md 6">
-                        <!-- <a href="<?= base_url()?>admin/Datatype/tambahdata" class="btn btn-primary">Add Data</a> -->
+                        
                         <button
                             type="button"
                             class="btn btn-primary"
                             data-toggle="modal"
-                            data-target="#exampleModal">
-                            Add Asset Type
+                            data-target="#modaladddata">
+                            Add Asset Location
                         </button>
-
                     </div>
-
                 </div>
                 <table
                     id="datatbl"
@@ -56,20 +56,16 @@
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Type Name</th>
-                            <th>Action</th>
+                            <th>Location Name</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php $no = 1; 
-                            foreach ($invtype as $type) : ?>
+                            foreach ($location as $loc) : ?>
                         <tr >
 
                             <td ><?= $no++; ?></td>
-                            <td ><?= $type['typename'] ?></td>
-
-                            <td >
-                                <a href="" class="btn btn-primary btn-sm">edit</span></td>
+                            <td ><?= $loc['LOCATIONNAME'] ?></td>
                         </tr>
                         <?php endforeach ?>
                     </tbody>
@@ -77,33 +73,25 @@
             </div>
         </div>
     </div>
-    <!-- Add Modal -->
-    <!-- <button
-        type="button"
-        class="btn btn-primary"
-        data-toggle="modal"
-        data-target="#exampleModal">
-        Add Asset Type
-    </button> -->
-
+    <!-- /.content -->
     <!-- Modal -->
     <div
         class="modal fade"
-        id="exampleModal"
+        id="modaladddata"
         tabindex="-1"
         role="dialog"
-        aria-labelledby="exampleModalLabel"
+        aria-labelledby="modaladddata"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Add Asset Type</h5>
+                    <h5 class="modal-title" id="modaladddata">Add Asset Location</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <?php echo form_open_multipart('admin/datatype/tambahdata'); ?>
+                    <?php echo form_open_multipart('admin/datalocation/adddata'); ?>
                     <div class="container">
 
                         <div class="card-body">
@@ -115,14 +103,15 @@
 
                             <form action="" method="post">
                                 <div class="form-group">
-                                    <label for="nama">Type Name</label>
-                                    <input type="text" name="typename" class="form-control" id="typename">
+                                    <label for="nama">Location Name</label>
+                                    <input type="text" name="locationname" class="form-control" id="locationname">
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="submit" name="adddata" class="btn btn-primary">Save changes</button>
-                                </div>
+                                <!-- <button type="submit" name="adddata" class="btn btn-primary
+                                float-right">Submit</button> -->
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" name="adddata" class="btn btn-primary">Save changes</button>
                             </form>
+
                         </div>
 
                     </div>
@@ -132,7 +121,6 @@
         </div>
     </div>
     <!-- End Add Modal -->
-    <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
 </div>
@@ -167,14 +155,7 @@ $(document).ready(function () {
                 }
             },
             'colvis'
-        ],
-        columnDefs: [
-            {
-                targets: -1,
-                visible: false
-            }
         ]
-
     });
 });
 </script>

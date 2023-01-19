@@ -24,6 +24,7 @@ class Datatype extends CI_Controller
 
         if ($this->form_validation->run()== FALSE)
         {
+            
             $data['typename'] = $this->M_datatype->tampil_data();
             $this->load->view('backend/datatype/adddata',$data);
         }

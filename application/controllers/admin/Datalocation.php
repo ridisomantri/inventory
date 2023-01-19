@@ -11,7 +11,7 @@ class Datalocation extends CI_Controller
     {
         $data['judul_halaman'] = 'Location Data';
         $data['location'] = $this->m_datalocation->index();
-        $this->load->view('backend/datalocation',$data);
+        $this->load->view('backend/datalocation/index',$data);
 
         
     }

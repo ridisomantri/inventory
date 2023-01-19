@@ -1,0 +1,27 @@
+{
+    "remotePath": "./public_html/invsys",
+    "host": "sariater-hotel.com",
+    "username": "hotelsariater",
+    "password": "Sariater2020#",
+    "port": 21,
+    "secure": false,
+    "protocol": "ftp",
+    "uploadOnSave": false,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "agent": null,
+    "allow": [],
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store"
+    ],
+    "generatedFiles": {
+        "extensionsToInclude": [
+            ".css, .js, .html, .php"
+        ],
+        "path": ""
+    }
+}
