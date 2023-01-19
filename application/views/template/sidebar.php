@@ -89,7 +89,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url()?>admin/datainventory" class="nav-link">
+                    <a href="<?= base_url()?>admin/Datainventory" class="nav-link">
                         <i class="nav-icon fas fa-laptop"></i>
                         <p>
                             Inventory Data

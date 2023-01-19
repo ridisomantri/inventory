@@ -11,9 +11,16 @@ class Datainventory extends CI_Controller
     {
         $data['judul_halaman'] = 'Data Inventory';
         $data['inventory'] = $this->m_datainventory->tampil_data();
-        $this->load->view('backend/datainventory',$data);
+        $this->load->view('backend/datainventory/index',$data);
+       
+    }
 
-        
+    public function viewdata()
+    {
+        $data['judul_halaman'] = 'Data Inventory';
+        $data['inventory'] = $this->m_datainventory->tampil_data();
+        $this->load->view('backend/datainventory/view',$data);
+       
     }
     
 }

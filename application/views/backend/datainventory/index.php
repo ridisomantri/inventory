@@ -70,8 +70,7 @@
                         <td ><?= $inv['TYPECOMP'] ?></td>
                         <td ><?= $inv['USERCOMP'] ?></td>
                         <td >
-                            <a href="" class="fa fa-list"</a>
-                            |
+                            <a href="<?php base_url()?>Datainventory/viewdata()" class="fa fa-list"</a>
                             <a href="" class="fa fa-pen"</a>
                            
                         </td>
@@ -124,8 +123,6 @@ $(document).ready(function () {
             targets: 2,
             visible: false},
             {targets: 4,
-            visible: false},
-            {targets: 7,
             visible: false},
             {targets: 5,
             visible: false} 
