@@ -4,40 +4,20 @@
     <?php $this->load->view('template/navbar'); ?>
     <?php $this->load->view('template/sidebar'); ?>
     <!-- <?php $this->load->view('template/footer'); ?> -->
-
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper" responsive="true">
-        <!-- Content Header (Page header) -->
-        <div class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1 class="m-0"><?= $judul_halaman ?></h1>
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-sm-6" >
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item">
-                                <a href="#">Home</a>
-                            </li>
-                            <li class="breadcrumb-item active"><?= $judul_halaman ?></li>
-                        </ol>
-                    </div>
-                    <!-- /.col -->
-                </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container-fluid -->
-        </div>
-        <!-- /.content-header -->
+    <?php $this->load->view('template/titlebreadcumb'); ?>
 
         <!-- Main content -->
         <div class="col lg 6" responsive="true">
         <div class="card-body">
         <div class="row mb-3">
-                    <div class="col md 6">
-                        <a href="<?= base_url()?>admin/datalocation/adddata" class="btn btn-primary">Add Data</a>
-                    </div>
+                   
+                    <button
+                            type="button"
+                            class="btn btn-primary"
+                            data-toggle="modal"
+                            data-target="#addasset">
+                            Add Asset
+                        </button>
                 </div>
             <table
                 id="datatbl"
@@ -70,8 +50,10 @@
                         <td ><?= $inv['TYPECOMP'] ?></td>
                         <td ><?= $inv['USERCOMP'] ?></td>
                         <td >
-                            <a href="<?php base_url()?>Datainventory/viewdata()" class="fa fa-list"</a>
-                            <a href="" class="fa fa-pen"</a>
+                            
+                            <a href="<?= base_url()?>admin/Datainventory/detail/<?= $inv['IDCOMP01']; ?>" class="btn btn-success btn-sm" role="button" aria-disabled="true">detail</a>
+                            <a href="<?= base_url()?>admin/Datainventory/edit/<?= $inv['IDCOMP01']; ?>" class="btn btn-primary btn-sm" role="button" aria-disabled="true">edit</a>
+                         
                            
                         </td>
                     </tr>
@@ -86,6 +68,87 @@
 <!-- /.content-wrapper -->
 </div>
 <!-- ./wrapper -->
+
+<!-- Modal -->
+<div
+        class="modal fade"
+        id="addasset"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="addasset"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addasset">Add Asset</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <?php echo form_open_multipart('admin/Datainventory/tambahdata'); ?>
+                    <div class="container">
+
+                        <div class="card-body">
+                            <!-- <?php if (validation_errors() ) : ?>
+                            <div class="alert alert-danger" role="alert">
+                                <?= validation_errors(); ?>
+                            </div>
+                            <?php endif; ?> -->
+
+                            <form action="" method="post">
+                                <div class="form-group">
+                                    <label for="CODE">Code</label>
+                                    <input type="text" name="CODE" class="form-control" id="CODE">
+                                </div>
+                               
+                                <div class="form-group">
+                                    <label for="DEPARTMENT">Department</label>
+                                        <select class="form-control" id="DEPARTMENT" name="DEPARTMENT">
+                                            <?php foreach($department as $dpt) : ?>
+                                            <option><?= $dpt['name']; ?></option>
+                                            <? endforeach; ?>
+                                        </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="IPCOMP">IP Number</label>
+                                    <input type="text" name="IPCOMP" class="form-control" id="IPCOMP">
+                                </div>
+                                <div class="form-group">
+                                    <label for="LOCATION">Location</label>
+                                        <select class="form-control" id="LOCATION" name="LOCATION">
+                                            <?php foreach($location as $lct) : ?>
+                                            <option><?= $lct['LOCATIONNAME']; ?></option>
+                                            <? endforeach; ?>
+                                        </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="TYPECOMP">Asset Type</label>
+                                        <select class="form-control" id="TYPECOMP" name="TYPECOMP">
+                                            <?php foreach($type as $typ) : ?>
+                                            <option><?= $typ['typename']; ?></option>
+                                            <? endforeach; ?>
+                                        </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="USERCOMP">User</label>
+                                    <input type="text" name="USERCOMP" class="form-control" id="USERCOMP">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" name="adddata" class="btn btn-primary">Save</button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End Add Modal -->
 
 <?php $this->load->view('template/js'); ?>
 

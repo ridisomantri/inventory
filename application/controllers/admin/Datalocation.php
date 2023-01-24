@@ -5,12 +5,12 @@ class Datalocation extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('m_datalocation');
+        $this->load->model('M_datalocation');
     }
     public function index()
     {
         $data['judul_halaman'] = 'Location Data';
-        $data['location'] = $this->m_datalocation->index();
+        $data['location'] = $this->M_datalocation->getlocation();
         $this->load->view('backend/datalocation/index',$data);
 
         
@@ -24,12 +24,12 @@ class Datalocation extends CI_Controller
 
         if ($this->form_validation->run()== FALSE)
         {
-            $data['locationname'] = $this->m_datalocation->index();
+            $data['locationname'] = $this->M_datalocation->getlocation();
         $this->load->view('backend/datalocation/adddata',$data);
         }
         else 
         {
-                $this->m_datalocation->addlocation();
+                $this->M_datalocation->addlocation();
                 redirect('admin/Datalocation');
         }
         

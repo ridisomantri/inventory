@@ -72,12 +72,12 @@
                                 <p>Location</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="<?= base_url()?>admin/Datastock" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Sparepart Stock</p>
                             </a>
-                        </li>
+                        </li> -->
                         
                         <!-- <li class="nav-item">
                             <a href="datatype" class="nav-link">
@@ -92,13 +92,13 @@
                     <a href="<?= base_url()?>admin/Datainventory" class="nav-link">
                         <i class="nav-icon fas fa-laptop"></i>
                         <p>
-                            Inventory Data
+                            Asset List
 
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<?= base_url()?>admin/Datastock" class="nav-link">
                         <i class="nav-icon fas fa-copy"></i>
                         <p>
                             Inventory at Store

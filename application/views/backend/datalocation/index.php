@@ -109,7 +109,7 @@
                                 <!-- <button type="submit" name="adddata" class="btn btn-primary
                                 float-right">Submit</button> -->
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" name="adddata" class="btn btn-primary">Save changes</button>
+                                <button type="submit" name="adddata" class="btn btn-primary">Save</button>
                             </form>
 
                         </div>
