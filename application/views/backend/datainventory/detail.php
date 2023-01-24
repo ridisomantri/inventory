@@ -1,5 +1,5 @@
 <?php $this->load->view('template/meta'); ?>
-
+<?= var_dump($detail); ?>
 <div class="wrapper">
     <?php $this->load->view('template/navbar'); ?>
     <?php $this->load->view('template/sidebar'); ?>
@@ -125,7 +125,7 @@
         </button>
       </div>
       <div class="modal-body">
-      <?php echo form_open_multipart('admin/Datainventory/adddetailasset'); ?>
+      <?php echo form_open_multipart('admin/Datainventory/adddetailasset',$detail); ?>
       <table class="table table-hover" id="table">
         <thead>
             <tr>

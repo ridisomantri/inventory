@@ -91,11 +91,7 @@
                     <div class="container">
 
                         <div class="card-body">
-                            <!-- <?php if (validation_errors() ) : ?>
-                            <div class="alert alert-danger" role="alert">
-                                <?= validation_errors(); ?>
-                            </div>
-                            <?php endif; ?> -->
+                           
 
                             <form action="" method="post">
                                 <div class="form-group">
@@ -108,7 +104,8 @@
                                         <select class="form-control" id="DEPARTMENT" name="DEPARTMENT">
                                             <?php foreach($department as $dpt) : ?>
                                             <option><?= $dpt['name']; ?></option>
-                                            <? endforeach; ?>
+                                            <?php endforeach; ?>
+                                         
                                         </select>
                                 </div>
                                 <div class="form-group">
@@ -118,9 +115,9 @@
                                 <div class="form-group">
                                     <label for="LOCATION">Location</label>
                                         <select class="form-control" id="LOCATION" name="LOCATION">
-                                            <?php foreach($location as $lct) : ?>
+                                        <?php foreach($location as $lct) : ?>
                                             <option><?= $lct['LOCATIONNAME']; ?></option>
-                                            <? endforeach; ?>
+                                            <?php endforeach; ?>
                                         </select>
                                 </div>
                                 <div class="form-group">
@@ -128,9 +125,10 @@
                                         <select class="form-control" id="TYPECOMP" name="TYPECOMP">
                                             <?php foreach($type as $typ) : ?>
                                             <option><?= $typ['typename']; ?></option>
-                                            <? endforeach; ?>
+                                            <?php endforeach; ?>
                                         </select>
                                 </div>
+                                
                                 <div class="form-group">
                                     <label for="USERCOMP">User</label>
                                     <input type="text" name="USERCOMP" class="form-control" id="USERCOMP">
